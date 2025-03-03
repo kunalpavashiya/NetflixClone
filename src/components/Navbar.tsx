@@ -16,18 +16,21 @@ export default function Navbar() {
       }
     };
 
+    // Check initial scroll position
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${
-      isScrolled ? 'bg-black' : 'bg-gradient-to-b from-black/80 to-transparent'
+      typeof window !== 'undefined' && isScrolled ? 'bg-black' : 'bg-gradient-to-b from-black/80 to-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Left side - Logo and Navigation */}
-          <div className="flex items-center">
+          <div className="flex items-center space-x-8">
             <Link href="/" className="flex-shrink-0">
               <Image
                 src="/netflix-logo.svg"
@@ -37,29 +40,27 @@ export default function Navbar() {
                 className="cursor-pointer object-contain"
               />
             </Link>
-            <div className="hidden md:block ml-10">
-              <div className="flex items-center space-x-4">
-                <Link href="/" className="text-sm text-gray-300 hover:text-white">
-                  Home
-                </Link>
-                <Link href="/tv-shows" className="text-sm text-gray-300 hover:text-white">
-                  TV Shows
-                </Link>
-                <Link href="/movies" className="text-sm text-gray-300 hover:text-white">
-                  Movies
-                </Link>
-                <Link href="/new" className="text-sm text-gray-300 hover:text-white">
-                  New & Popular
-                </Link>
-                <Link href="/my-list" className="text-sm text-gray-300 hover:text-white">
-                  My List
-                </Link>
-              </div>
+            <div className="hidden md:flex items-center space-x-6">
+              <Link href="/" className="text-sm text-gray-300 hover:text-white">
+                Home
+              </Link>
+              <Link href="/tv-shows" className="text-sm text-gray-300 hover:text-white">
+                TV Shows
+              </Link>
+              <Link href="/movies" className="text-sm text-gray-300 hover:text-white">
+                Movies
+              </Link>
+              <Link href="/new" className="text-sm text-gray-300 hover:text-white">
+                New & Popular
+              </Link>
+              <Link href="/my-list" className="text-sm text-gray-300 hover:text-white">
+                My List
+              </Link>
             </div>
           </div>
 
           {/* Right side - Search, Notifications, Profile */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <button className="text-gray-300 hover:text-white">
               <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
