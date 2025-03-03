@@ -1,0 +1,80 @@
+import { Movie, Category } from '@/types';
+
+export const featuredMovie: Movie = {
+  id: '1',
+  title: 'Stranger Things',
+  description: 'When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.',
+  thumbnailUrl: '/images/stranger-things.jpg',
+  videoUrl: '/videos/stranger-things-trailer.mp4',
+  duration: '2h 15m',
+  genre: ['Sci-Fi', 'Horror', 'Drama'],
+  rating: 'TV-14',
+  releaseYear: 2022,
+  isNetflixOriginal: true,
+  isTrending: true,
+};
+
+export const categories: Category[] = [
+  {
+    id: 'trending',
+    name: 'Trending Now',
+    movies: [
+      {
+        id: '2',
+        title: 'Wednesday',
+        description: 'Smart, sarcastic and a little dead inside, Wednesday Addams investigates a murder spree while making new friends — and foes — at Nevermore Academy.',
+        thumbnailUrl: '/images/wednesday.jpg',
+        videoUrl: '/videos/wednesday-trailer.mp4',
+        duration: '1h 55m',
+        genre: ['Comedy', 'Fantasy', 'Horror'],
+        rating: 'TV-14',
+        releaseYear: 2022,
+        isNetflixOriginal: true,
+        isTrending: true,
+      },
+      {
+        id: '3',
+        title: 'The Witcher',
+        description: 'Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.',
+        thumbnailUrl: '/images/witcher.jpg',
+        videoUrl: '/videos/witcher-trailer.mp4',
+        duration: '2h 5m',
+        genre: ['Fantasy', 'Action', 'Drama'],
+        rating: 'TV-MA',
+        releaseYear: 2023,
+        isNetflixOriginal: true,
+        isTrending: true,
+      },
+    ],
+  },
+  {
+    id: 'originals',
+    name: 'Netflix Originals',
+    movies: [
+      {
+        id: '4',
+        title: 'The Crown',
+        description: 'This drama follows the political rivalries and romance of Queen Elizabeth II\'s reign and the events that shaped the second half of the 20th century.',
+        thumbnailUrl: '/images/crown.jpg',
+        videoUrl: '/videos/crown-trailer.mp4',
+        duration: '1h 58m',
+        genre: ['Drama', 'Historical', 'Biography'],
+        rating: 'TV-MA',
+        releaseYear: 2022,
+        isNetflixOriginal: true,
+      },
+      {
+        id: '5',
+        title: 'Bridgerton',
+        description: 'The eight close-knit siblings of the Bridgerton family look for love and happiness in London high society.',
+        thumbnailUrl: '/images/bridgerton.jpg',
+        videoUrl: '/videos/bridgerton-trailer.mp4',
+        duration: '2h 10m',
+        genre: ['Drama', 'Romance'],
+        rating: 'TV-MA',
+        releaseYear: 2023,
+        isNetflixOriginal: true,
+      },
+    ],
+  },
+]; 
